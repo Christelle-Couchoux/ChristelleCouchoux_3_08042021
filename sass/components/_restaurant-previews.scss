@@ -1,0 +1,64 @@
+.restaurant-preview{
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    margin: 9px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: map-get($map: $color-bg, $key:restaurant-preview);
+    @include box-shadow(map-get($color-box-shadow,restaurants));
+
+    &__new{
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        width: 80px;
+        height: 30px;
+        background-color: map-get($map: $color-bg, $key: new);
+        color: map-get($map: $color-txt, $key: new);
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        font-family:map-get($map: $font-family, $key: new);
+        font-size:map-get($map: $font-size, $key: new);
+    }
+
+    &__image{
+        width: 100%;
+        height: 175px;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 100%;
+            border-radius: 15px 15px 0 0;
+        }
+        #img-note{
+            object-position: 0 61%;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px 0 14px;
+        height: 75px;
+    }
+
+    &__name{
+        font-family:map-get($map: $font-family, $key: restaurant-name);
+        font-size:map-get($map: $font-size, $key: restaurant-name);
+    }
+
+    &__location{
+        font-family:map-get($map: $font-family, $key: restaurant-location);
+        font-size:map-get($map: $font-size, $key: restaurant-location);
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "christellecouchoux_3_08042021",
+  "version": "1.0.0",
+  "description": "P3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d .css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christelle-Couchoux/ChristelleCouchoux_3_08042021.git"
+  },
+  "author": "Christelle Couchoux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christelle-Couchoux/ChristelleCouchoux_3_08042021/issues"
+  },
+  "homepage": "https://github.com/Christelle-Couchoux/ChristelleCouchoux_3_08042021#readme",
+  "browserslist": "last 4 versions"
+}

@@ -1,0 +1,12 @@
+#presentation{
+    width: 100%;
+    background-color: map-get($map: $color-bg, $key: presentation);
+    padding: 40px;
+    text-align: center;
+    font-family: map-get($map: $font-family, $key: presentation);
+    font-size: map-get($map: $font-size, $key: presentation);
+
+    h1{
+        margin: 0 5px 15px 5px;
+    }
+}

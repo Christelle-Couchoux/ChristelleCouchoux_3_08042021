@@ -1,0 +1,65 @@
+.menu{
+    width: 100%;
+    height: 1433px;
+
+    &__img{
+        height: 275px;
+        width: 100%;
+        background-color: map-get($map: $color-bg, $key: menu-img);
+        display: flex;
+        justify-content: center;
+
+        img{
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+    }
+
+    &__txt{
+        background-color: map-get($map: $color-bg, $key: menu);
+        border-radius: 40px 40px 0 0;
+        margin: 0 0 0 0;
+        padding: 30px 13px 70px 13px;
+        position: relative;
+        top: -55px;
+    }
+
+    &__title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px 25px 5px;
+    }
+
+    &__dish-type{
+        margin: 0 0 43px 0;
+    }
+
+    &__dish-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h4{
+        padding: 0 0 0 7px;
+    }
+
+    &__line{
+        width: 40px;
+        height: 3px;
+        background-color: map-get($map: $color-bg, $key: menu-line);
+        margin: 5px 0 7px 7px;
+    }
+
+    .order-btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+}

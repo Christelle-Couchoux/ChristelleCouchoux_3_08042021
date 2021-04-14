@@ -1,0 +1,46 @@
+footer{ 
+    background-color: map-get($map: $color-bg, $key: footer);
+    color: map-get($color-txt, footer); 
+    width: 100%;
+    height: 198px;
+    padding: 25px;
+    position: relative;
+    font-family:map-get($map: $font-family, $key: footer);
+    font-size:map-get($map: $font-size, $key: footer);
+    @include links-style(map-get($color-txt, footer));
+
+    span{
+        display: inline;
+        padding: 0 0 0 8px;
+    }
+
+    ul{
+        list-style-type: none; /* remove list markers */
+        padding: 0; /* remove indentation of list items */
+        margin: 20px 0; 
+        line-height: 1.5rem;
+        .fa-fw{
+            text-align: left;
+            width: 1em;
+        }
+    };  
+};  
+
+.logo-svg{
+    fill: map-get($map: $color-txt, $key: footer);
+} ;
+
+.fa-utensils{
+    transform: scale(0.9, 0.81);
+    position: relative;
+    left: -2px;
+};
+
+.fa-hands-helping{
+    transform: scale(0.6, 0.81);
+    position: relative;
+    left: -4px;
+};
+
+
+

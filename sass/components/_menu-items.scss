@@ -1,0 +1,34 @@
+.menu-item{
+    background-color: map-get($map: $color-bg, $key: menu-item);
+    padding: 15px 23px 15px 11px;
+    margin: 14px 0px auto;
+    width: 100%;
+    max-width: 450px;
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-radius: 15px;
+    @include box-shadow(map-get($color-box-shadow, menu));
+
+    &__description{
+        p:first-child{
+            font-family: map-get($map: $font-family, $key: menu-item-name);
+            font-size: map-get($map: $font-size, $key: menu-item-name); 
+        }
+        p:nth-child(2){
+            font-family: map-get($map: $font-family, $key: menu-item-more);
+            font-size: map-get($map: $font-size, $key: menu-item-more); 
+        }    
+    }
+
+    &__price{
+        font-family: map-get($map: $font-family, $key: menu-item-price);
+        font-size: map-get($map: $font-size, $key: menu-item-price);
+    }
+};
+
+
+
+

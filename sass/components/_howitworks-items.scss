@@ -1,0 +1,45 @@
+.howitworks-item{
+    width: 325px;
+    height: 72px;
+    margin: 12px 0;
+    border-radius: 20px;
+    background-color: map-get($map: $color-bg, $key: howitworks-item);
+    @include box-shadow((map-get($color-box-shadow,howitworks)));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__bullet{
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: map-get($map: $color-bg, $key: howitworks-bullet);
+        color: map-get($map: $color-txt, $key: howitworks-bullet);
+        position: absolute;
+        left: -12px;
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+        padding: 0 0 2px 0;
+        font-family: map-get($map: $font-family, $key: howitworks-bullet);
+        font-size: map-get($map: $font-size, $key: howitworks-bullet);
+    }
+
+    i{
+        position: absolute;
+        left: 35px;
+        color: map-get($map: $color-txt, $key: howitworks-icon);
+    }
+
+    .fa-mobile-alt{
+        transform: scale(1.3, 1.3);
+    }
+    .fa-list{
+        transform: scale(1, 1.3);
+    }
+    .fa-store{
+        transform: scale(1, 1.2);
+    }
+}
+

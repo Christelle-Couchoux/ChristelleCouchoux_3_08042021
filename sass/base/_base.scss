@@ -1,0 +1,28 @@
+
+*{ /* reset margin and padding */
+    box-sizing:border-box; 
+    margin: 0;
+    padding: 0;
+};
+
+body{ /* define minimum/maximum width */
+    min-width: 375px;
+    max-width: 1920px;
+}
+
+span{ /* span instead of div because inside inline element (a href) */
+    display: block; /* so span behaves as a div */
+}
+
+i{
+    display: inline-block;
+}
+
+main{
+    ul{ /* remove list markers and indentation */
+        list-style-type: none;
+        padding: 0; 
+        margin: 0; 
+        };
+    @include links-style; /* color by default is color for main txt so no need to specify here */
+}

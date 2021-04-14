@@ -1,0 +1,21 @@
+/* explore button */
+#presentation .btn{
+    @include btn($width-explore);
+    @include box-shadow(map-get($color-box-shadow,btn));
+    margin: 25px 0 15px 0;
+}
+
+/* order button */
+.menu .btn{
+    @include btn($width-order);
+    @include box-shadow(map-get($color-box-shadow,btn));
+}
+
+/* like button */
+.fa-heart{
+    font-size:map-get($map: $font-size, $key: heart);
+    transform: scale(1, 1.1);
+    -webkit-text-stroke: 1px white;
+}
+
+

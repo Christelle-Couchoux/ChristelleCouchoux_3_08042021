@@ -1,0 +1,27 @@
+#location{
+    width: 100%;
+    height: 50px;
+    background-color: map-get($map: $color-bg, $key: location);
+    padding: 16px;
+    box-shadow: inset 0px 5px 5px -5px map-get($map: $color-box-shadow, $key: location );
+    font-family: map-get($map: $font-family, $key: location);
+    font-size: map-get($map: $font-size, $key: location);
+}
+
+.location-content{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    p{
+        position: relative;
+    }
+
+    i{
+        position: absolute; 
+        left: -30px;
+    }
+}
+
+
+
