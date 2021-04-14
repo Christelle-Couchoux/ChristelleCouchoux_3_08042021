@@ -9,14 +9,19 @@ $color-bg-light:#f6f6f6;
 $color-bg-medium: #eaeaea;
 $color-bg-dark: #353535;
 $color-grad-2-1-to-bottom-right: linear-gradient(175deg, $color-secondary, $color-primary);
-$color-grad-1-2-to-bottom: linear-gradient($color-primary, $color-secondary);
 $color-box-shadow-medium30: darken($color-bg-medium, 30%);
 $color-box-shadow-lightest10:darken($color-bg-lightest, 10%);
 $color-box-shadow-light10:darken($color-bg-light, 10%);
+$color-box-shadow-light20:darken($color-bg-light, 20%);
+
 /* animations */
-/* $color-grad-2-1-to-bottom-right-lightened: lighten($color-grad-2-1-to-bottom-right, 20%);*/ /* check */
-$color-box-shadow-btn-darkened: darken($color-bg-light, 20%); /* check */
-$color-primary-lightened: ligthen($color-primary, 50%); /* check */
+$color-primary-lighter5: lighten($color-primary, 5%);
+$color-secondary-lighter5: lighten($color-secondary, 5%);
+$color-grad-2-1-to-bottom-right-lighter5: linear-gradient(175deg, $color-secondary-lighter5, $color-primary-lighter5);
+$color-box-shadow-light25: darken($color-bg-light, 25%);
+$color-grad-1-2-to-bottom: linear-gradient($color-primary, $color-secondary);
+$color-tertiary-lighter30: ligthen($color-tertiary, 30%);
+$color-primary-light: #f5edff;
 
 /* colors maps */
 /* text */
@@ -25,7 +30,7 @@ $color-txt:(
     footer:  #ffffff,
     btn: #ffffff,
     howitworks-bullet: #ffffff,
-    new: darken($color-tertiary, 40%), /* check */
+    new: darken($color-tertiary, 40%),
     howitworks-icon: #7e7e7e,
     howitworks-icon-hover: $color-primary,
     check: $color-tertiary,
@@ -44,7 +49,6 @@ $color-bg:(
     footer: $color-bg-dark,
     new: $color-tertiary,
     btn: $color-grad-2-1-to-bottom-right,
-    heart: $color-grad-1-2-to-bottom,
     check-transition: $color-tertiary,
     check-icon: $color-bg-lightest,
     menu: $color-bg-light,
@@ -52,17 +56,21 @@ $color-bg:(
     menu-line: $color-tertiary,
     menu-item: $color-bg-lightest,
     /* animations */
-    howitworks-item-hover: $color-primary-lightened,
-
+    btn-hover: $color-grad-2-1-to-bottom-right-lighter5,
+    howitworks-item-hover: $color-primary-light,
+    heart-active: $color-grad-1-2-to-bottom,
+    arrow-hover: $color-tertiary-lighter30,
 );
 
 /* box-shadow */
 $color-box-shadow:(
     location:$color-box-shadow-medium30,
-    /*btn:$color-box-shadow-btn,*/
+    btn:$color-box-shadow-light20,
     howitworks:$color-box-shadow-lightest10,
     restaurants:$color-box-shadow-light10,
     menu:$color-box-shadow-light10,
+    /* animations */
+    btn-hover: $color-box-shadow-light25,
 );
 
 
@@ -120,14 +128,21 @@ $width-order: 186px;
 $breaking-points:(
     tablet: 768px,
     desktop: 1200px,
-)
+);
 
 
 
 /* animations */
-/* duration */
+/* duration and delay*/
+$btn-anim-duration: 250ms;
+$heart-anim-duration: 500ms;
+$arrow-anim-duration: 250ms;
+$howitworks-item-anim-duration: 250ms;
 
-/* delay */
+
+
+
+
 
 
 

@@ -9,6 +9,33 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 1;
+
+    &:hover{
+        &::after{
+            opacity:1;
+        }
+        i::after{
+            opacity: 1;
+        }
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 20px;
+        opacity: 0;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity $howitworks-item-anim-duration;
+        background-color: $color-primary-light;
+    }
 
     &__bullet{
         width: 24px;
@@ -30,6 +57,20 @@
         position: absolute;
         left: 35px;
         color: map-get($map: $color-txt, $key: howitworks-icon);
+        z-index: 1;
+
+        &::after{
+        content: ""; /* need to put sthg in there but icons are different */
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity $howitworks-item-anim-duration;
+        color: $color-primary; /* not working */
+        }
     }
 
     .fa-mobile-alt{
@@ -41,5 +82,6 @@
     .fa-store{
         transform: scale(1, 1.2);
     }
+    
 }
 

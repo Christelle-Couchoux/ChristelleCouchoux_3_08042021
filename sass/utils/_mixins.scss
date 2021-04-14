@@ -11,14 +11,15 @@
 }
 
 /* explore/order buttons */
-@mixin btn ($width) {
+@mixin btn ($width, $bg){
     height: 50px;
     width: $width;
-    background: map-get($map: $color-bg, $key: btn);
+    background: $bg;
     border: none;
     border-radius: 25px;
     color: map-get($map: $color-txt, $key: btn);
     font-size: map-get($map: $font-size, $key: btn);
+    cursor: pointer;
 }
 
 /* box-shadow */
@@ -32,7 +33,6 @@
         @content;
     }
 }
-
 @mixin desktop{
     @media all and (min-width: map-get($map: $breaking-points, $key: desktop)){
         @content;
