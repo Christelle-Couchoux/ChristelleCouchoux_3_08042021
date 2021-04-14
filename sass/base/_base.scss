@@ -8,6 +8,7 @@
 body{ /* define minimum/maximum width */
     min-width: 375px;
     max-width: 1920px;
+    margin: auto;
 }
 
 span{ /* span instead of div because inside inline element (a href) */

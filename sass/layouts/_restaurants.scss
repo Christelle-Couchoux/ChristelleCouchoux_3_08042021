@@ -6,7 +6,10 @@
     justify-content: space-around;
     align-items: center;
     padding: 40px 20px 50px 20px;
-    
+    @include tablet{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     h2{
         width: 100%;
         margin: 15px 0;

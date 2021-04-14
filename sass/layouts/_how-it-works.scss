@@ -8,6 +8,10 @@
     align-items: center;
     font-family: map-get($map: $font-family, $key: howitworks);
     font-size: map-get($map: $font-size, $key: howitworks);
+    @include desktop{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
     h2{
         width: 100%;

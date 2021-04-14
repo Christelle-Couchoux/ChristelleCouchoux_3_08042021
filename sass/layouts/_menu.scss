@@ -1,6 +1,6 @@
 .menu{
     width: 100%;
-    height: 1433px;
+    height: auto;
 
     &__img{
         height: 275px;
@@ -35,8 +35,20 @@
         padding: 0 24px 25px 5px;
     }
 
+    &__dishes{
+        @include desktop{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
     &__dish-type{
         margin: 0 0 43px 0;
+        @include desktop{
+            width: 33%;
+            margin: 0 10px 43px 10px;
+        }
     }
 
     &__dish-list{

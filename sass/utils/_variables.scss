@@ -116,6 +116,11 @@ $width-order: 186px;
 
 
 /* breaking points map */
+/* mobile 375-768px = default version */
+$breaking-points:(
+    tablet: 768px,
+    desktop: 1200px,
+)
 
 
 
