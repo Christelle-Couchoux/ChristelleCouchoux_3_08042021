@@ -30,7 +30,7 @@ header{
             opacity:1;
         }
     }
-    &::after{
+    &::after{ /* shows back arrow is clickable for better user experience */
         content: "";
         position: absolute;
         top: 0;

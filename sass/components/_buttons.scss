@@ -60,54 +60,58 @@
 }
 
 /* like button */
-/* ARGHHHHH!!! How do I get the background to show THROUGH the heart??? */
-.heart{
-    background-color: transparent;
+.like{
     cursor: pointer;
     position: relative;
     display:flex;
     justify-content:center;
     align-items:center;
+    z-index: 1;
+    position: relative;
 
-    &:hover{
-        &::before{
-            opacity: 1;
-        }
-        .far{
+    &:hover, &:active{
+        .far{ /* empty heart disappears */
             opacity: 0;
+        }
+        .fas{ /* full heart appears */
+            opacity: 1;
         }
     }
 
-    &::before{
+    .far{ /* empty heart visible */
+        opacity: 1;
+        transition: opacity $like-anim-duration;            
+    }
+
+    .fas{ /* full heart invisble */
         opacity: 0;
-        transition: $heart-anim-duration;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: map-get($map: $color-bg, $key: heart-active);
+        background: -webkit-linear-gradient(270deg,$color-primary, $color-secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        transition: opacity $like-anim-duration;
     }
 }
 
 .fa-heart{
     font-size:map-get($map: $font-size, $key: heart);
-    transform: scale(1, 1.1);
-    -webkit-text-stroke: 1px white;
-    transition: $heart-anim-duration;
+    transform: scaleY(1.1);
+    font-weight: lighter;
+    background-color: transparent;
     display:flex;
     justify-content:center;
     align-items:center;
-    position: relative;
-
-    &.menu-bg{
-        background-color: map-get($map: $color-bg, $key: menu);
-    }
-    &.restaurant-preview-bg{
-        background-color: map-get($map: $color-bg, $key: restaurant-preview);
-    }
+    z-index: 10;
+    position: absolute;
+    top: -20px;
+    right: -8px;
+    padding: 10px; /* increases heart 'hover/click area' for better user experience */
 }
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 .restaurant-preview{
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     height: 250px;
     margin: 9px 0;
     position: relative;
@@ -10,8 +10,11 @@
     background-color: map-get($map: $color-bg, $key:restaurant-preview);
     @include box-shadow(map-get($color-box-shadow,restaurants));
     @include tablet{
-        width: 48%;
-        margin: 9px 5px;
+        width: 45%;
+        margin: 9px 10px 30px 10px;
+    }
+    @include desktop{
+        margin: 9px 28px 30px 28px;
     }
     &__new{
         position: absolute;

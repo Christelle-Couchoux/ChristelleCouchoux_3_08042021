@@ -10,9 +10,16 @@
     justify-content: space-between;
     align-items: flex-end;
     border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* so can't see check arriving before it's in the menu-item */
     @include box-shadow(map-get($color-box-shadow, menu));
 
-    &__description{
+    &__description{  
+        flex: 1;
+        margin-right: 0;
+        transition: margin-right $check-anim-duration;
+
         p:first-child{
             font-family: map-get($map: $font-family, $key: menu-item-name);
             font-size: map-get($map: $font-size, $key: menu-item-name); 
@@ -20,13 +27,84 @@
         p:nth-child(2){
             font-family: map-get($map: $font-family, $key: menu-item-more);
             font-size: map-get($map: $font-size, $key: menu-item-more); 
-        }    
+        } 
+    }
+
+    &:hover &__description{
+        margin-right: 59px;
+    }
+
+    .ellipsis{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
     }
 
     &__price{
         font-family: map-get($map: $font-family, $key: menu-item-price);
         font-size: map-get($map: $font-size, $key: menu-item-price);
+        transform: translateX(0);
+        transition: transform $check-anim-duration;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-left: 20px;
     }
+
+    &:hover &__price{
+        transform: translateX(-59px);
+    }
+
+    &__check{
+        background-color: map-get($map: $color-bg, $key: check);
+        width: 59px;
+        height: 68px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0 15px 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform $check-anim-duration, opacity 0ms; /* duration 0 for opacity so check appears right away */
+    }
+
+    &:hover &__check{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+
+    &__check-icon{
+        background-color: map-get($map: $color-bg, $key: check-icon);
+        color: map-get($map: $color-txt, $key: check-icon);
+        font-family: map-get($map: $font-family, $key: check-icon);
+        font-size: map-get($map: $font-size, $key: check-icon);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transform: rotate(-450deg);
+        transition: transform $check-anim-duration;
+
+        .fas{
+            position: relative;
+            top: 1px;
+        }
+    }
+        
+    &:hover &__check-icon{
+        transform: rotate(0deg);
+    }
+
+
+
 };
 
 

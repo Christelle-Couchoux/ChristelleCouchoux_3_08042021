@@ -24,7 +24,7 @@
         margin: 0 0 0 0;
         padding: 30px 13px 70px 13px;
         position: relative;
-        top: -55px;
+        margin-top: -55px;
     }
 
     &__title{
@@ -46,7 +46,7 @@
     &__dish-type{
         margin: 0 0 43px 0;
         @include desktop{
-            width: 33%;
+            width: 30%;
             margin: 0 10px 43px 10px;
         }
     }

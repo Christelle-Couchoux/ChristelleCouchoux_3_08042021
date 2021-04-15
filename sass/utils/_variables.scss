@@ -8,12 +8,15 @@ $color-bg-lightest:#ffffff;
 $color-bg-light:#f6f6f6;
 $color-bg-medium: #eaeaea;
 $color-bg-dark: #353535;
+$color-basic-dark: black;
+$color-basic-light: #ffffff;
+$color-basic-medium: #7e7e7e;
+$color-tertiary-dark: #008766;
 $color-grad-2-1-to-bottom-right: linear-gradient(175deg, $color-secondary, $color-primary);
 $color-box-shadow-medium30: darken($color-bg-medium, 30%);
 $color-box-shadow-lightest10:darken($color-bg-lightest, 10%);
 $color-box-shadow-light10:darken($color-bg-light, 10%);
 $color-box-shadow-light20:darken($color-bg-light, 20%);
-
 /* animations */
 $color-primary-lighter5: lighten($color-primary, 5%);
 $color-secondary-lighter5: lighten($color-secondary, 5%);
@@ -26,14 +29,15 @@ $color-primary-light: #f5edff;
 /* colors maps */
 /* text */
 $color-txt:(
-    main: #000000,
-    footer:  #ffffff,
-    btn: #ffffff,
-    howitworks-bullet: #ffffff,
-    new: darken($color-tertiary, 40%),
-    howitworks-icon: #7e7e7e,
+    main: $color-basic-dark,
+    footer: $color-basic-light,
+    btn: $color-basic-light,
+    howitworks-bullet: $color-basic-light,
+    new: $color-tertiary-dark,
+    howitworks-icon: $color-basic-medium,
+    /* animations */
     howitworks-icon-hover: $color-primary,
-    check: $color-tertiary,
+    check-icon: $color-tertiary,
 );
 
 /* background */
@@ -60,6 +64,7 @@ $color-bg:(
     howitworks-item-hover: $color-primary-light,
     heart-active: $color-grad-1-2-to-bottom,
     arrow-hover: $color-tertiary-lighter30,
+    check: $color-tertiary,
 );
 
 /* box-shadow */
@@ -96,25 +101,36 @@ $font-size:(
     menu-item-name: 1.15rem,
     menu-item-more: 0.92rem,
     menu-item-price: 0.9rem,
+    check-icon: 0.85rem,
 );
 
-/* font-family-map */
+/* font-family */
+/* variables */
+$robotomedium: 'robotomedium'; /* how to add font options? */
+$robotoregular: 'robotoregular';
+$robotolight: 'robotolight';
+$robotothin: 'robotothin';
+$shrikhand: 'shrikhandregular';
+
+
+/* map */
 $font-family:(
-    h1: 'robotomedium',
-    h2: 'robotomedium',
-    h3: 'shrikhandregular',
-    h4: 'robotolight',
-    location: 'robotoregular',
-    presentation: 'robotothin',
-    howitworks: 'robotomedium',
-    howitworks-bullet: 'robotoregular',
-    new: 'robotoregular',
-    restaurant-name: 'robotomedium',
-    restaurant-location: 'robotolight',
-    footer: 'robotolight',
-    menu-item-name: 'robotomedium',
-    menu-item-more: 'robotothin',
-    menu-item-price: 'robotomedium',
+    h1: $robotomedium,
+    h2: $robotomedium,
+    h3: $shrikhand,
+    h4: $robotolight,
+    location: $robotoregular,
+    presentation: $robotothin,
+    howitworks: $robotomedium,
+    howitworks-bullet: $robotoregular,
+    new: $robotoregular,
+    restaurant-name: $robotomedium,
+    restaurant-location: $robotolight,
+    footer: $robotolight,
+    menu-item-name: $robotomedium,
+    menu-item-more: $robotothin,
+    menu-item-price: $robotomedium,
+    check-icon: $robotolight,
 );
 
 
@@ -131,13 +147,13 @@ $breaking-points:(
 );
 
 
-
 /* animations */
 /* duration and delay*/
 $btn-anim-duration: 250ms;
-$heart-anim-duration: 500ms;
+$like-anim-duration: 400ms;
 $arrow-anim-duration: 250ms;
 $howitworks-item-anim-duration: 250ms;
+$check-anim-duration: 400ms;
 
 
 

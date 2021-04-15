@@ -10,6 +10,9 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+    @include desktop{
+        justify-content: center;
+    }
     h2{
         width: 100%;
         margin: 15px 0;

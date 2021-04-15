@@ -27,7 +27,7 @@ footer{
 };  
 
 .logo-svg{
-    fill: map-get($map: $color-txt, $key: footer);
+    fill: map-get($map: $color-txt, $key: footer); /* change color logo svg */
 } ;
 
 .fa-utensils{
