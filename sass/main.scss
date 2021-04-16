@@ -1,17 +1,22 @@
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
+@import "./utils/keyframes";
+
 @import "./base/base";
 @import "./base/typography";
+
 @import "./components/buttons";
 @import "./components/howitworks-items";
 @import "./components/restaurant-previews";
 @import "./components/menu-items";
+@import "./components/loader";
+
 @import "./layouts/header";
 @import "./layouts/footer";
 @import "./layouts/location";
 @import "./layouts/presentation";
-@import "./layouts/how-it-works";
+@import "./layouts/howitworks";
 @import "./layouts/restaurants";
 @import "./layouts/menu";
 

@@ -55,14 +55,13 @@ $color-bg:(
     btn: $color-grad-2-1-to-bottom-right,
     check-transition: $color-tertiary,
     check-icon: $color-bg-lightest,
-    menu: $color-bg-light,
-    menu-img: $color-bg-medium,
+    menu-txt: $color-bg-light,
+    menu: $color-bg-medium,
     menu-line: $color-tertiary,
     menu-item: $color-bg-lightest,
     /* animations */
     btn-hover: $color-grad-2-1-to-bottom-right-lighter5,
     howitworks-item-hover: $color-primary-light,
-    heart-active: $color-grad-1-2-to-bottom,
     arrow-hover: $color-tertiary-lighter30,
     check: $color-tertiary,
 );
@@ -142,18 +141,32 @@ $width-order: 186px;
 /* breaking points map */
 /* mobile 375-768px = default version */
 $breaking-points:(
-    tablet: 768px,
-    desktop: 1200px,
+    medium: 768px,
+    xlarge: 1200px,
 );
 
 
 /* animations */
-/* duration and delay*/
+/* btn */
 $btn-anim-duration: 250ms;
+/* like */
 $like-anim-duration: 400ms;
+/* back arrow */
 $arrow-anim-duration: 250ms;
+/* howitworks-item */
 $howitworks-item-anim-duration: 250ms;
+/* check */
 $check-anim-duration: 400ms;
+/* menu-item apparition */
+$menu-item-anim-duration: 600ms ;
+/*   
+$item-delay: 100ms;
+$menu-item-anim-duration: dollar i * $item-delay;
+for @for loop but doesn't work 
+*/
+
+
+/* loading spinner */
 
 
 

@@ -28,17 +28,16 @@
 }
 
 /* breaking points */
-@mixin tablet{
-    @media all and (min-width: map-get($map: $breaking-points, $key: tablet)){
+@mixin medium{
+    @media all and (min-width: map-get($map: $breaking-points, $key: medium)){
         @content;
     }
 }
-@mixin desktop{
-    @media all and (min-width: map-get($map: $breaking-points, $key: desktop)){
+@mixin xlarge{
+    @media all and (min-width: map-get($map: $breaking-points, $key: xlarge)){
         @content;
     }
 }
-
 
 
 

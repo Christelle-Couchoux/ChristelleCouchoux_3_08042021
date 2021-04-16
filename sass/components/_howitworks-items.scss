@@ -11,10 +11,10 @@
     position: relative;
     cursor: pointer;
     z-index: 1; /* so txt over hover bg */
-    @include desktop{
+    @include xlarge{
         margin: 0 30px;
     }
-    &:hover, &:active{
+    &:hover{
         &::after{
             opacity:1;
         }

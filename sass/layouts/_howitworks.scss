@@ -1,4 +1,4 @@
-#how-it-works{
+#howitworks{
     width: 100%;
     background-color: map-get($map: $color-bg, $key: howitworks);
     padding: 32px 20px 56px 20px;
@@ -8,7 +8,7 @@
     align-items: center;
     font-family: map-get($map: $font-family, $key: howitworks);
     font-size: map-get($map: $font-size, $key: howitworks);
-    @include desktop{
+    @include xlarge{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;

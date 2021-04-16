@@ -1,0 +1,44 @@
+/* menu-item animation */
+@keyframes menu-item-anim{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* loader animation */
+/* loader disappears after 2500ms */
+@keyframes loader{
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      z-index: -99; /* so is not in the way anymore */
+    }
+}
+
+/* dots jump up and down */
+@keyframes dots{
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px); /* starts with going up */
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+

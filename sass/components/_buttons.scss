@@ -69,7 +69,7 @@
     z-index: 1;
     position: relative;
 
-    &:hover, &:active{
+    &:hover{
         .far{ /* empty heart disappears */
             opacity: 0;
         }

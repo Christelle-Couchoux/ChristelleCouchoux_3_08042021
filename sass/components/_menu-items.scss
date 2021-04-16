@@ -14,6 +14,27 @@
     cursor: pointer;
     overflow: hidden; /* so can't see check arriving before it's in the menu-item */
     @include box-shadow(map-get($color-box-shadow, menu));
+    animation: menu-item-anim $menu-item-anim-duration both ease-in-out;
+    &--1{
+        animation-delay: 150ms;
+    }
+    &--2{
+        animation-delay: 300ms;
+    }
+    &--3{
+        animation-delay: 450ms;
+    }
+    &--4{
+        animation-delay: 600ms;
+    }
+    /* 
+    @for $i from 1 through 4{
+        &--#{dollar i}{
+          animation-delay: $item-delay * dollar i;
+        }
+    }
+    doesn't work: undefined variable dollar i
+    */
 
     &__description{  
         flex: 1;
@@ -102,8 +123,6 @@
     &:hover &__check-icon{
         transform: rotate(0deg);
     }
-
-
 
 };
 

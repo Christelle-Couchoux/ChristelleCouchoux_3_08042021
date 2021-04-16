@@ -16,12 +16,59 @@
 /* breaking points map */
 /* mobile 375-768px = default version */
 /* animations */
-/* duration and delay*/
+/* btn */
+/* like */
+/* back arrow */
+/* howitworks-item */
+/* check */
+/* menu-item apparition */
+/*   
+$item-delay: 100ms;
+$menu-item-anim-duration: dollar i * $item-delay;
+for @for loop but doesn't work 
+*/
+/* loading spinner */
 /* remove underlining and different color */
 /* links take color from map $color-txt, default is main but can be changed for footer */
 /* explore/order buttons */
 /* box-shadow */
 /* breaking points */
+/* menu-item animation */
+@keyframes menu-item-anim {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* loader animation */
+/* loader disappears after 2500ms */
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -99;
+    /* so is not in the way anymore */
+  }
+}
+/* dots jump up and down */
+@keyframes dots {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+    /* starts with going up */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 * {
   /* reset margin and padding */
   box-sizing: border-box;
@@ -236,11 +283,11 @@ em {
   z-index: 1;
   position: relative;
 }
-.like:hover .far, .like:active .far {
+.like:hover .far {
   /* empty heart disappears */
   opacity: 0;
 }
-.like:hover .fas, .like:active .fas {
+.like:hover .fas {
   /* full heart appears */
   opacity: 1;
 }
@@ -296,10 +343,10 @@ em {
     margin: 0 30px;
   }
 }
-.howitworks-item:hover::after, .howitworks-item:active::after {
+.howitworks-item:hover::after {
   opacity: 1;
 }
-.howitworks-item:hover .fas, .howitworks-item:active .fas {
+.howitworks-item:hover .fas {
   color: #9356DC;
 }
 .howitworks-item::after {
@@ -438,6 +485,27 @@ em {
   overflow: hidden;
   /* so can't see check arriving before it's in the menu-item */
   box-shadow: 0 5px 8px #dddddd;
+  animation: menu-item-anim 600ms both ease-in-out;
+  /* 
+  @for $i from 1 through 4{
+      &--dollar i{
+        animation-delay: $item-delay * dollar i;
+      }
+  }
+  doesn't work: undefined variable dollar i
+  */
+}
+.menu-item--1 {
+  animation-delay: 150ms;
+}
+.menu-item--2 {
+  animation-delay: 300ms;
+}
+.menu-item--3 {
+  animation-delay: 450ms;
+}
+.menu-item--4 {
+  animation-delay: 600ms;
 }
 .menu-item__description {
   flex: 1;
@@ -515,6 +583,58 @@ em {
 }
 .menu-item:hover .menu-item__check-icon {
   transform: rotate(0deg);
+}
+
+/* loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(246, 246, 246, 0.8);
+  z-index: 99;
+  /* is on top of everything */
+  animation: loader 500ms 2000ms ease-out both;
+  /* waits 2000ms so dots have time to jump up and down,
+  then takes 500ms to fade away (= opacity 0.8*1 -> 0.8*0), 
+  is there from the start (opacity 0.8 while waiting / dots jumping up and down,
+  stays away forever (opacity 0) */
+}
+.loader .dots {
+  height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader__dot {
+  width: 14px;
+  height: 14px;
+  margin: 0 3px;
+  border-radius: 50%;
+  animation: dots 1000ms ease-in-out infinite;
+  /* 1000ms is duration for 1x up-down (=how fast dots move),
+  will be repeated for 2500ms (= delay + duration of loader anim) */
+}
+.loader__dot--1 {
+  background-color: #9356DC;
+  animation-delay: 100ms;
+}
+.loader__dot--2 {
+  background-color: #FF79DA;
+  animation-delay: 200ms;
+}
+.loader__dot--3 {
+  background-color: #99E2D0;
+  animation-delay: 300ms;
+}
+.loader__dot--4 {
+  background-color: #7e7e7e;
+  animation-delay: 400ms;
 }
 
 header {
@@ -659,7 +779,7 @@ footer ul .fa-fw {
   margin: 0 5px 15px 5px;
 }
 
-#how-it-works {
+#howitworks {
   width: 100%;
   background-color: #ffffff;
   padding: 32px 20px 56px 20px;
@@ -671,13 +791,13 @@ footer ul .fa-fw {
   font-size: 1rem;
 }
 @media all and (min-width: 1200px) {
-  #how-it-works {
+  #howitworks {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
 }
-#how-it-works h2 {
+#howitworks h2 {
   width: 100%;
   margin: 20px 0;
   font-family: "robotomedium";
@@ -712,13 +832,18 @@ footer ul .fa-fw {
 .menu {
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eaeaea;
+  z-index: 1;
 }
 .menu__img {
   height: 275px;
   width: 100%;
-  background-color: #eaeaea;
   display: flex;
   justify-content: center;
+  z-index: 2;
 }
 .menu__img img {
   width: 100%;
@@ -726,14 +851,22 @@ footer ul .fa-fw {
   height: 100%;
   object-fit: cover;
   position: relative;
+  z-index: 3;
 }
 .menu__txt {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   margin: 0 0 0 0;
+  width: 100%;
+  max-width: 800px;
   padding: 30px 13px 70px 13px;
-  position: relative;
   margin-top: -55px;
+  z-index: 5;
+}
+@media all and (min-width: 1200px) {
+  .menu__txt {
+    max-width: 1500px;
+  }
 }
 .menu__title {
   display: flex;

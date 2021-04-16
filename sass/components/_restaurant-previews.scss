@@ -9,11 +9,11 @@
     border-radius: 15px;
     background-color: map-get($map: $color-bg, $key:restaurant-preview);
     @include box-shadow(map-get($color-box-shadow,restaurants));
-    @include tablet{
+    @include medium{
         width: 45%;
         margin: 9px 10px 30px 10px;
     }
-    @include desktop{
+    @include xlarge{
         margin: 9px 28px 30px 28px;
     }
     &__new{
@@ -68,3 +68,6 @@
         font-size:map-get($map: $font-size, $key: restaurant-location);
     }
 }
+
+
+

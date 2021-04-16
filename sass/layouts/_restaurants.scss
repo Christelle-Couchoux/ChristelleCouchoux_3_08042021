@@ -6,11 +6,11 @@
     justify-content: space-around;
     align-items: center;
     padding: 40px 20px 50px 20px;
-    @include tablet{
+    @include medium{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    @include desktop{
+    @include xlarge{
         justify-content: center;
     }
     h2{

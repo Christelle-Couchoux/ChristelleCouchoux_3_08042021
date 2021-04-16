@@ -1,0 +1,58 @@
+/* loader */
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(246, 246, 246, 0.8);
+    ;
+    z-index: 99; /* is on top of everything */
+    animation: loader 500ms 2000ms ease-out both;
+    /* waits 2000ms so dots have time to jump up and down,
+    then takes 500ms to fade away (= opacity 0.8*1 -> 0.8*0), 
+    is there from the start (opacity 0.8 while waiting / dots jumping up and down,
+    stays away forever (opacity 0) */
+
+    .dots{
+        height: 50px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+  
+    &__dot{
+        width: 14px;
+        height: 14px;
+        margin: 0 3px;
+        border-radius: 50%;
+        animation: dots 1000ms ease-in-out infinite; 
+        /* 1000ms is duration for 1x up-down (=how fast dots move),
+        will be repeated for 2500ms (= delay + duration of loader anim) */
+  
+        &--1{
+            background-color: $color-primary;
+            animation-delay: 100ms;
+        }
+        &--2{
+            background-color: $color-secondary;
+            animation-delay: 200ms;
+        }
+        &--3{
+            background-color: $color-tertiary;
+            animation-delay: 300ms;
+        }
+        &--4{
+            background-color: $color-basic-medium;
+            animation-delay: 400ms;
+        }
+    }
+}
+
+
+
+
