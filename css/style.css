@@ -339,10 +339,8 @@ em {
 }
 .like .fas {
   /* full heart invisble */
-  background: linear-gradient(180deg, #9256dc, #ff7ad9);
-  background-clip: text;
+  background: -webkit-linear-gradient(270deg, #9256dc, #ff7ad9);
   -webkit-background-clip: text;
-  color: transparent;
   -webkit-text-fill-color: transparent;
   opacity: 0;
   transition: opacity 400ms;
@@ -441,8 +439,16 @@ em {
   /* ex: @include color-bg-txt (header) */
   background-color: #9256dc;
   color: white;
+  display: flex;
+  flex-direction: row;
+  /* default is row */
+  flex-wrap: nowrap;
+  /* default is 'nowrap' */
+  justify-content: center;
+  /* default is 'flex-start' */
+  align-items: flex-end;
   position: absolute;
-  top: 24px;
+  top: auto;
   /* default value is 'auto' */
   right: auto;
   bottom: auto;
@@ -453,24 +459,14 @@ em {
   border-radius: 50%;
   padding: 0 0 2px 0;
 }
-.howitworks-item__bullet p {
-  position: absolute;
-  top: 4px;
-  /* default value is 'auto' */
-  right: auto;
-  bottom: auto;
-  left: 8px;
-  /* because flexbox doesn't work properly in Firefox */
-}
 .howitworks-item i {
   color: #7d7d7d;
   position: absolute;
-  top: 28px;
+  top: auto;
   /* default value is 'auto' */
   right: auto;
   bottom: auto;
   left: 35px;
-  /* because flexbox doesn't work properly in Firefox */
   transition: color 250ms;
 }
 .howitworks-item .fa-mobile-alt {
@@ -664,7 +660,7 @@ em {
 .menu-item__description p:nth-child(2) {
   /* ex: @include font-family-size (h1) */
   font-family: "robotolight", "arial", "sans-serif";
-  font-size: 0.92rem;
+  font-size: 0.96rem;
 }
 .menu-item:hover .menu-item__description {
   margin-right: 59px;

@@ -74,10 +74,8 @@
     }
 
     .fas{ /* full heart invisble */
-        background: linear-gradient(180deg,$color-primary, $color-secondary);
-        background-clip: text;
+        background: -webkit-linear-gradient(270deg,$color-primary, $color-secondary);
         -webkit-background-clip: text;
-        color: transparent;
         -webkit-text-fill-color: transparent;
         opacity: 0;
 

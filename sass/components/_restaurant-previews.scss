@@ -1,7 +1,6 @@
 .restaurant-preview{
     @include color-bg-txt(restaurant-preview);
     @include box-shadow(map-get($color-box-shadow,restaurants));
-
     @include size(100%, 250px);
     max-width: 600px;
     margin: 9px 0;
