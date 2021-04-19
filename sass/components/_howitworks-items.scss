@@ -36,15 +36,18 @@
     &__bullet{
         @include font-familiy-size(howitworks-bullet);
         @include color-bg-txt(howitworks-bullet);
-        @include flexbox(row, nowrap, center, flex-end);
-        @include position(absolute, auto, auto, auto, -12px);
+        @include position(absolute, 24px, auto, auto, -12px); /* position circle */
         @include circle(24px);
         padding: 0 0 2px 0;
+
+        p{
+            @include position(absolute, 4px, auto, auto, 9px); /* because flexbox doesn't work properly in Firefox */
+        }
     }
 
     i{
         color: map-get($map: $color-txt, $key: howitworks-icon);
-        @include position(absolute, auto, auto, auto, 35px);
+        @include position(absolute, 28px, auto, auto, 35px); /* because flexbox doesn't work properly in Firefox */
         transition: color $howitworks-item-anim-duration;
     }
 

@@ -74,8 +74,10 @@
     }
 
     .fas{ /* full heart invisble */
-        background: -webkit-linear-gradient(270deg,$color-primary, $color-secondary);
+        background: linear-gradient(180deg,$color-primary, $color-secondary);
+        background-clip: text;
         -webkit-background-clip: text;
+        color: transparent;
         -webkit-text-fill-color: transparent;
         opacity: 0;
 
@@ -89,6 +91,6 @@
     background-color: transparent;
     @include flexbox(row, nowrap, center, center);
     @include position(absolute, -20px, -8px, auto, auto);
-    padding: 10px; /* increases heart 'hover/click area' for better user experience */
+    padding: 5px; /* increases heart 'hover/click area' for better user experience */
     z-index: 10; /* so over a href link */
 }
