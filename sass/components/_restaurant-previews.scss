@@ -1,14 +1,13 @@
 .restaurant-preview{
-    width: 100%;
-    max-width: 600px;
-    height: 250px;
-    margin: 9px 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    background-color: map-get($map: $color-bg, $key:restaurant-preview);
+    @include color-bg-txt(restaurant-preview);
     @include box-shadow(map-get($color-box-shadow,restaurants));
+    @include flexbox(column, nowrap, center, center);
+    @include position(relative, auto, auto, auto, auto);
+    @include size(100%, 250px);
+    max-width: 600px;
+    margin: 9px 0;
+    border-radius: 15px;
+
     @include medium{
         width: 45%;
         margin: 9px 10px 30px 10px;
@@ -16,31 +15,23 @@
     @include xlarge{
         margin: 9px 28px 30px 28px;
     }
+
     &__new{
-        position: absolute;
-        top: 13px;
-        right: 13px;
-        width: 80px;
-        height: 30px;
-        background-color: map-get($map: $color-bg, $key: new);
-        color: map-get($map: $color-txt, $key: new);
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include font-familiy-size(new);
+        @include color-bg-txt(new);
+        @include flexbox(row, nowrap, center, center);
+        @include position(absolute, 13px, 13px, auto, auto);
+        @include size(80px, 30px);
         border-radius: 2px;
-        font-family:map-get($map: $font-family, $key: new);
-        font-size:map-get($map: $font-size, $key: new);
+        z-index: 1;
     }
 
     &__image{
-        width: 100%;
-        height: 175px;
-        position: relative;
+        @include position(relative, auto, auto, auto, auto);
+        @include size(100%, 175px);
 
         img{
-            width: 100%;
-            height: 100%;
+            @include size(100%);
             object-fit: cover;
             object-position: 50% 100%;
             border-radius: 15px 15px 0 0;
@@ -49,25 +40,18 @@
             object-position: 0 61%;
         }
     }
+
     &__info{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        @include flexbox(row, nowrap, space-between, center);
+        @include size(100%, 75px);
         padding: 0 24px 0 14px;
-        height: 75px;
     }
 
     &__name{
-        font-family:map-get($map: $font-family, $key: restaurant-name);
-        font-size:map-get($map: $font-size, $key: restaurant-name);
+        @include font-familiy-size(restaurant-name);
     }
 
     &__location{
-        font-family:map-get($map: $font-family, $key: restaurant-location);
-        font-size:map-get($map: $font-size, $key: restaurant-location);
+        @include font-familiy-size(restaurant-location);
     }
 }
-
-
-

@@ -1,23 +1,15 @@
 #howitworks{
-    width: 100%;
-    background-color: map-get($map: $color-bg, $key: howitworks);
-    padding: 32px 20px 56px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-family: map-get($map: $font-family, $key: howitworks);
-    font-size: map-get($map: $font-size, $key: howitworks);
+    @include font-familiy-size(howitworks);
+    @include color-bg-txt(howitworks);
+    @include flexbox(column, nowrap, space-around, center);
+    @include size(100%, auto);
+    padding: 30px 20px 56px 20px;
+    
     @include xlarge{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        @include flexbox(row, wrap, center, center);
     }
 
     h2{
-        width: 100%;
-        margin: 20px 0;
-        font-family: map-get($map: $font-family, $key: h2);
-        font-size: map-get($map: $font-size, $key: h2);
+        margin: 20px 0 13px 0;
     }
 }

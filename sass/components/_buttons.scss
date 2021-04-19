@@ -1,39 +1,35 @@
 /* explore button */
 #presentation .btn{
-    @include btn($width-explore, map-get($map: $color-bg, $key: btn));
+    @include btn(218px, map-get($map: $color-bg, $key: btn));
     @include box-shadow(map-get($color-box-shadow,btn));
-    margin: 25px 0 15px 0;
-    position: relative;
+    @include position(relative,auto, auto, auto, auto);
+    margin: 25px 0 0 0;
 
     &:hover{
         &::after{
             opacity:1;
         }
     }
+
     &::after{
         content: "Explorer nos restaurants";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        @include btn($width-explore, map-get($map: $color-bg, $key: btn-hover));
+        @include btn(218px, map-get($map: $color-bg, $key: btn-hover));
         @include box-shadow(map-get($color-box-shadow,btn-hover));
+        @include flexbox(row, nowrap, center, center);
+        @include position(absolute, 0, 0, 0, 0);
         opacity: 0;
         z-index: 1;
+
         transition: opacity $btn-anim-duration;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }  
 }
 
 
 /* order button */
 .menu .btn{
-    @include btn($width-order, map-get($map: $color-bg, $key: btn));
+    @include btn(186px, map-get($map: $color-bg, $key: btn));
     @include box-shadow(map-get($color-box-shadow,btn));
-    position: relative;
+    @include position(relative, auto, auto, auto, auto);
     z-index: 1;
 
     &:hover{
@@ -41,33 +37,26 @@
             opacity:1;
         }
     }
+
     &::after{
         content: "Commander";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        @include btn($width-order, map-get($map: $color-bg, $key: btn-hover));
+        @include btn(186px, map-get($map: $color-bg, $key: btn-hover));
         @include box-shadow(map-get($color-box-shadow,btn-hover));
+        @include flexbox(row, nowrap, center, center);
+        @include position(absolute, 0, 0, 0, 0);
         opacity: 0;
         z-index: -1;
+
         transition: opacity $btn-anim-duration;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }  
 }
 
 /* like button */
 .like{
+    @include flexbox(row, nowrap, center, center);
+    @include position(relative, auto, auto, auto, auto);
     cursor: pointer;
-    position: relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     z-index: 1;
-    position: relative;
 
     &:hover{
         .far{ /* empty heart disappears */
@@ -80,16 +69,16 @@
 
     .far{ /* empty heart visible */
         opacity: 1;
+
         transition: opacity $like-anim-duration;            
     }
 
     .fas{ /* full heart invisble */
-        opacity: 0;
         background: -webkit-linear-gradient(270deg,$color-primary, $color-secondary);
-        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        color: transparent;
+        opacity: 0;
+
         transition: opacity $like-anim-duration;
     }
 }
@@ -97,32 +86,9 @@
 .fa-heart{
     font-size:map-get($map: $font-size, $key: heart);
     transform: scaleY(1.1);
-    font-weight: lighter;
     background-color: transparent;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index: 10;
-    position: absolute;
-    top: -20px;
-    right: -8px;
+    @include flexbox(row, nowrap, center, center);
+    @include position(absolute, -20px, -8px, auto, auto);
     padding: 10px; /* increases heart 'hover/click area' for better user experience */
+    z-index: 10; /* so over a href link */
 }
-
-
-
-
-
-
-
-
-
-        
-    
-
-
- 
-
-      
-    
-

@@ -1,4 +1,4 @@
-
+/* general display */
 *{ /* reset margin and padding */
     box-sizing:border-box; 
     margin: 0;
@@ -6,8 +6,8 @@
 };
 
 body{ /* define minimum/maximum width */
-    min-width: 375px;
-    max-width: 1920px;
+    min-width: $min-width;
+    max-width: $max-width;
     margin: auto;
 }
 
@@ -19,11 +19,8 @@ i{
     display: inline-block;
 }
 
+
+/* links style */
 main{
-    ul{ /* remove list markers and indentation */
-        list-style-type: none;
-        padding: 0; 
-        margin: 0; 
-        };
     @include links-style; /* color by default is color for main txt so no need to specify here */
 }

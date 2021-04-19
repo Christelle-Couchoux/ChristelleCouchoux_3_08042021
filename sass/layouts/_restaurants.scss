@@ -1,23 +1,18 @@
 #restaurants{
-    width: 100%;
-    background-color: map-get($map: $color-bg, $key: restaurants);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    @include color-bg-txt(restaurants);
+    @include flexbox(column, nowrap, space-around, center);
+    @include size(100%, auto);
     padding: 40px 20px 50px 20px;
+    
     @include medium{
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include flexbox(row, wrap, space-around, center);
     }
     @include xlarge{
-        justify-content: center;
+        @include flexbox(row, wrap, center, center);
     }
+
     h2{
-        width: 100%;
         margin: 15px 0;
     }
 }
-
-    
    

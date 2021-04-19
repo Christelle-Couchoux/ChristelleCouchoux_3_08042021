@@ -1,0 +1,189 @@
+/* colors */
+/* colors variables */
+/* basic */
+$color-primary: hsl(267, 66%, 60%);
+$color-secondary: hsl(317, 100%, 74%);
+$color-tertiary: hsl(165, 56%, 74%);
+$color-bg-lightest:	hsl(0, 0%, 100%);
+$color-bg-light: hsl(0, 0%, 96%);
+$color-bg-medium: hsl(0, 0%, 92%);
+$color-bg-dark: hsl(0, 0%, 21%);
+$color-basic-dark: hsl(0, 0%, 0%);
+$color-basic-light: hsl(0, 0%, 100%);
+$color-basic-medium: hsl(0, 0%, 49%);
+$color-tertiary-dark: hsl(165, 100%, 23%);
+$color-grad-2-1-to-bottom-right: linear-gradient(175deg, $color-secondary, $color-primary);
+$color-box-shadow-medium30: mix(hsl(0, 0%, 0%),$color-bg-medium, 30%);
+$color-box-shadow-lightest10:mix(hsl(0, 0%, 0%), $color-bg-lightest, 10%);
+$color-box-shadow-light10:mix(hsl(0, 0%, 0%), $color-bg-light, 10%);
+$color-box-shadow-light20:mix(hsl(0, 0%, 0%), $color-bg-light, 20%);
+/* animations */
+$color-primary-lighter15: mix(hsl(0, 0%, 100%), $color-primary, 15%);
+$color-secondary-lighter15: mix(hsl(0, 0%, 100%), $color-secondary, 15%);
+$color-grad-2-1-to-bottom-right-lighter15: linear-gradient(175deg, $color-secondary-lighter15, $color-primary-lighter15);
+$color-box-shadow-darker25: mix(hsl(0, 0%, 0%), $color-bg-light, 25%);
+$color-tertiary-lighter: mix(hsl(0, 0%, 100%), $color-tertiary, 70%);
+$color-tertiary-brighter: hsl(165, 56%, 60%);
+$color-primary-lightest: hsl(267, 100%, 96%);
+
+/* colors maps */
+/* text */
+$color-txt:( 
+    main:$color-basic-dark,
+    header:$color-basic-dark,
+    back-arrow:$color-basic-dark,
+    location:$color-basic-dark,
+    presentation:$color-basic-dark,
+    howitworks:$color-basic-dark,
+    howitworks-item:$color-basic-dark,
+    howitworks-bullet: $color-basic-light,
+    howitworks-icon: $color-basic-medium,
+    restaurants:$color-basic-dark,
+    restaurant-preview:$color-basic-dark,
+    footer: $color-basic-light,
+    new: $color-tertiary-dark,
+    btn: $color-basic-light,
+    menu-txt: $color-basic-dark,
+    menu-item: $color-basic-dark,
+    /* animations */
+    howitworks-item-hover: $color-primary,
+    arrow-hover: $color-tertiary-brighter,
+    check-icon: $color-tertiary,
+);
+
+/* background */
+$color-bg:(
+    header: $color-bg-lightest,
+    location: $color-bg-medium,
+    presentation: $color-bg-light,
+    howitworks: $color-bg-lightest,
+    howitworks-item: $color-bg-light,
+    howitworks-bullet: $color-primary,
+    restaurants: $color-bg-light,
+    restaurant-preview:$color-bg-lightest,
+    footer: $color-bg-dark,
+    new: $color-tertiary,
+    btn: $color-grad-2-1-to-bottom-right,
+    menu: $color-bg-medium,
+    menu-txt: $color-bg-light,
+    menu-line: $color-tertiary,
+    menu-item: $color-bg-lightest,
+    /* animations */
+    btn-hover: $color-grad-2-1-to-bottom-right-lighter15,
+    howitworks-item-hover: $color-primary-lightest,
+    check: $color-tertiary,
+    check-icon: $color-bg-lightest,
+);
+
+/* box-shadow */
+$color-box-shadow:(
+    location:$color-box-shadow-medium30,
+    btn:$color-box-shadow-light20,
+    howitworks:$color-box-shadow-lightest10,
+    restaurants:$color-box-shadow-light10,
+    menu:$color-box-shadow-light10,
+    /* animations */
+    btn-hover: $color-box-shadow-darker25,
+);
+
+
+/* fonts */
+/* font size map */
+$font-size:(
+    h1: 1.5rem,    
+    h2: 1.45rem,
+    h3: 1.7rem,
+    h4: 1rem,
+    location: 1rem,
+    presentation: 1.1rem,
+    btn: 1rem,
+    howitworks: 1rem,
+    howitworks-bullet:0.85rem,
+    new: 0.85rem,
+    restaurant-name: 1.1rem,
+    restaurant-location: 1.1rem,
+    footer: 1rem,
+    menu-item-name: 1.15rem,
+    menu-item-more: 0.92rem,
+    menu-item-price: 0.9rem,
+    /* icons */
+    check-icon: 0.85rem,
+    heart: 1.4rem,
+    back-arrow: 1.2rem,
+);
+
+/* font family variables */
+$shrikhand: ('shrikhandregular', 'cursive', 'sans-serif');
+$regular: ('robotoregular', 'arial', 'sans-serif');
+$medium: ('robotomedium', 'arial', 'sans-serif');
+$light: ('robotolight', 'arial', 'sans-serif');
+
+/* font family map */
+$font-family:(
+    h1: $medium,
+    h2: $medium,
+    h3: $shrikhand,
+    h4: $light,
+    location: $regular,
+    presentation: $light,
+    howitworks: $medium,
+    howitworks-bullet: $regular,
+    new: $regular,
+    restaurant-name: $medium,
+    restaurant-location: $light,
+    footer: $light,
+    menu-item-name: $medium,
+    menu-item-more: $light,
+    menu-item-price: $medium,
+);
+
+
+/* page size */
+/* page width */
+$min-width: 375px;
+$max-width: 1920px;
+
+/* breaking points map */
+$breaking-points:(
+  /* small: 375px, default version */
+    medium: 768px,
+  /* large: 992px */
+    xlarge: 1200px,
+    /* max: 1920px */
+);
+
+
+/* animations */
+/* btn */
+$btn-anim-duration: 250ms;
+
+/* like */
+$like-anim-duration: 400ms;
+
+/* back arrow */
+$arrow-anim-duration: 250ms;
+
+/* howitworks-item */
+$howitworks-item-anim-duration: 250ms;
+
+/* check */
+$check-anim-duration: 400ms;
+
+/* menu-item apparition */
+$menu-item-anim-duration: 600ms ;
+/*  PROBLEM 
+$item-delay: 100ms;
+$menu-item-anim-duration: dollar i * $item-delay;
+for @for loop but doesn't work 
+*/
+
+/* loader */
+$loader-anim-duration: 1000ms;
+$loader-anim-delay:2000ms;
+/* waits 2000ms so dots have time to jump up and down,
+then takes 1000ms to fade away */
+$dots-anim-duration: 1000ms;
+$dots-iterations: (($loader-anim-duration + $loader-anim-delay)/$dots-anim-duration);
+/* 1000ms is duration for 1x up-down (= how fast dots move),
+will be repeated 3 TIMES (covers delay + duration of loader anim),
+NOT infinite or, although invisible and underneath, they would jump up and down forever */

@@ -1,13 +1,10 @@
 footer{ 
-    background-color: map-get($map: $color-bg, $key: footer);
-    color: map-get($color-txt, footer); 
-    width: 100%;
-    height: 198px;
-    padding: 25px;
-    position: relative;
-    font-family:map-get($map: $font-family, $key: footer);
-    font-size:map-get($map: $font-size, $key: footer);
     @include links-style(map-get($color-txt, footer));
+    @include font-familiy-size(footer);
+    @include color-bg-txt(footer);
+    @include position(relative, auto, auto, auto, auto);
+    @include size(100%, auto);
+    padding: 25px 25px 15px 25px;
 
     span{
         display: inline;
@@ -15,8 +12,7 @@ footer{
     }
 
     ul{
-        list-style-type: none; /* remove list markers */
-        padding: 0; /* remove indentation of list items */
+        @include list-style;
         margin: 20px 0; 
         line-height: 1.5rem;
         .fa-fw{
@@ -32,15 +28,10 @@ footer{
 
 .fa-utensils{
     transform: scale(0.9, 0.81);
-    position: relative;
-    left: -2px;
+    @include position(relative, auto, auto, auto, -2px);
 };
 
 .fa-hands-helping{
     transform: scale(0.6, 0.81);
-    position: relative;
-    left: -4px;
+    @include position(relative, auto, auto, auto, -4px);
 };
-
-
-

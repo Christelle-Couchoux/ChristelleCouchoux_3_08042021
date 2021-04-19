@@ -1,19 +1,16 @@
 .menu-item{
-    background-color: map-get($map: $color-bg, $key: menu-item);
-    padding: 15px 23px 15px 11px;
-    margin: 14px 0px auto;
-    width: 100%;
+    @include color-bg-txt(menu-item);
+    @include box-shadow(map-get($color-box-shadow, menu));
+    @include flexbox(row, nowrap, space-between, flex-end);
+    @include position(relative, auto, auto, auto, auto);
+    @include size(100%, 68px);
     max-width: 450px;
-    height: 68px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    margin: 14px 0px auto;
+    padding: 15px 23px 15px 11px;
     border-radius: 15px;
-    position: relative;
     cursor: pointer;
     overflow: hidden; /* so can't see check arriving before it's in the menu-item */
-    @include box-shadow(map-get($color-box-shadow, menu));
+    
     animation: menu-item-anim $menu-item-anim-duration both ease-in-out;
     &--1{
         animation-delay: 150ms;
@@ -37,17 +34,15 @@
     */
 
     &__description{  
-        flex: 1;
+        flex: 1; /* so takes all the space up to the price */
         margin-right: 0;
         transition: margin-right $check-anim-duration;
 
         p:first-child{
-            font-family: map-get($map: $font-family, $key: menu-item-name);
-            font-size: map-get($map: $font-size, $key: menu-item-name); 
+            @include font-familiy-size(menu-item-name); 
         }
         p:nth-child(2){
-            font-family: map-get($map: $font-family, $key: menu-item-more);
-            font-size: map-get($map: $font-size, $key: menu-item-more); 
+            @include font-familiy-size(menu-item-more);
         } 
     }
 
@@ -63,14 +58,11 @@
     }
 
     &__price{
-        font-family: map-get($map: $font-family, $key: menu-item-price);
-        font-size: map-get($map: $font-size, $key: menu-item-price);
+        @include font-familiy-size(menu-item-price);
+        @include flexbox(row, nowrap, flex-end, flex-end);
+        padding-left: 20px;
         transform: translateX(0);
         transition: transform $check-anim-duration;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        padding-left: 20px;
     }
 
     &:hover &__price{
@@ -79,53 +71,35 @@
 
     &__check{
         background-color: map-get($map: $color-bg, $key: check);
-        width: 59px;
-        height: 68px;
-        position: absolute;
-        top: 0;
-        right: 0;
+        @include flexbox(row, nowrap, center, center);
+        @include position(absolute, 0, 0, auto, auto);
+        @include size(59px, 68px);
         border-radius: 0 15px 15px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         opacity: 0;
         transform: translateX(100%);
         transition: transform $check-anim-duration, opacity 0ms; /* duration 0 for opacity so check appears right away */
     }
 
     &:hover &__check{
-        transform: translateX(0);
         opacity: 1;
+        transform: translateX(0);
     }
 
-
     &__check-icon{
-        background-color: map-get($map: $color-bg, $key: check-icon);
-        color: map-get($map: $color-txt, $key: check-icon);
-        font-family: map-get($map: $font-family, $key: check-icon);
         font-size: map-get($map: $font-size, $key: check-icon);
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+        @include color-bg-txt(check-icon);
+        @include flexbox(row, nowrap, center, center);
+        @include position(relative, auto, auto, auto, auto);
+        @include circle(20px);
         transform: rotate(-450deg);
         transition: transform $check-anim-duration;
 
         .fas{
-            position: relative;
-            top: 1px;
+            @include position(relative, 1px, auto, auto, auto);
         }
     }
         
     &:hover &__check-icon{
         transform: rotate(0deg);
     }
-
-};
-
-
-
-
+}
