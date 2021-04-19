@@ -41,7 +41,7 @@
         padding: 0 0 2px 0;
 
         p{
-            @include position(absolute, 4px, auto, auto, 9px); /* because flexbox doesn't work properly in Firefox */
+            @include position(absolute, 4px, auto, auto, 8px); /* because flexbox doesn't work properly in Firefox */
         }
     }
 
