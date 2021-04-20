@@ -619,7 +619,7 @@ em {
   height: 68px;
   max-width: 450px;
   margin: 14px 0px auto;
-  padding: 15px 23px 15px 11px;
+  padding: 10px 23px 10px 11px;
   border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
@@ -1028,7 +1028,7 @@ footer ul .fa-fw {
   /* default is square */
   width: 100%;
   height: auto;
-  padding: 42px 35px 54px 35px;
+  padding: 42px 30px 54px 30px;
   text-align: center;
 }
 #presentation h1 {

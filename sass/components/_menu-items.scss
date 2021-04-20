@@ -6,7 +6,7 @@
     @include size(100%, 68px);
     max-width: 450px;
     margin: 14px 0px auto;
-    padding: 15px 23px 15px 11px;
+    padding: 10px 23px 10px 11px;
     border-radius: 15px;
     cursor: pointer;
     overflow: hidden; /* so can't see check arriving before it's in the menu-item */
@@ -37,6 +37,7 @@
         flex: 1; /* so takes all the space up to the price */
         margin-right: 0;
         transition: margin-right $check-anim-duration;
+
 
         p:first-child{
             @include font-familiy-size(menu-item-name); 
