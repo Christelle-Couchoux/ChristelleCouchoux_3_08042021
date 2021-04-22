@@ -10,7 +10,7 @@
     @include flexbox(row, nowrap, center, center);
     margin: 0 auto;
 
-    p{
+    h5{
         @include position(relative, auto, auto, auto, auto);
     }
 

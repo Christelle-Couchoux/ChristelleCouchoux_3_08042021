@@ -24,20 +24,11 @@
     &--4{
         animation-delay: 600ms;
     }
-    /* 
-    @for $i from 1 through 4{
-        &--#{dollar i}{
-          animation-delay: $item-delay * dollar i;
-        }
-    }
-    doesn't work: undefined variable dollar i
-    */
 
     &__description{  
         flex: 1; /* so takes all the space up to the price */
         margin-right: 0;
         transition: margin-right $check-anim-duration;
-
 
         p:first-child{
             @include font-familiy-size(menu-item-name); 
@@ -78,7 +69,8 @@
         border-radius: 0 15px 15px 0;
         opacity: 0;
         transform: translateX(100%);
-        transition: transform $check-anim-duration, opacity 0ms; /* duration 0 for opacity so check appears right away */
+        transition: transform $check-anim-duration, opacity 0ms; 
+        /* duration 0 for opacity so check appears right away */
     }
 
     &:hover &__check{
