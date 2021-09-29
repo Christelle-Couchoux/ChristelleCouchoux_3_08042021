@@ -1,4 +1,11 @@
-# ChristelleCouchoux_3_08042021
-OpenClassrooms - Web Dev - P3
-Dynamisez une page web avec des animations CSS
+# Oh My Food ! #
+
+### OpenClassrooms - Web Developer path - Project 3 ###
+
+
+#### Aim
+- Implement a mockup and add CSS animations to a web page.
+
+For more details see the brief.
+    
 
